@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table{
+border: 1px solid black;
+}
+th, td {
+padding: 2px;
+border-bottom: 1px solid #ddd;
+text-align: center;
+justify-center: center;
+}
+p, h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center; 
+    background-color: #f2f2f2
+}
+</style>
+<title>PAGINA DE COTAÇÃO</title>
+</head>
+<body>
+<h1>COTAÇÃO</h1>
+<div class="divrem">
+<p>REMETENTE</p>
+</div>
+{% for x in dados %}
+    <table>
+        <thead>
+            <tr>
+                <th>CNPJ</th>
+                <th>NOME DA EMPRESA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.cnpjReme}}</td>
+                <td> {{x.nomeEprOne}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>TELEFONE</th>
+                <th>RUA</th>
+                <th>BAIRRO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.telOne}}</td>
+                <td> {{x.logOne}}</td>
+                <td> {{x.ruaOne}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>NUMERO</th>
+                <th>CIDADE</th>
+                <th>ESTADO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.numero}}</td>
+                <td> {{x.cityOne}}</td>
+                <td> {{x.estateOne}}</td>
+            </tr>
+        </tbody>
+    </table> <table>
+        <thead>
+            <tr>
+                <th>CEP</th>
+                <th>CONTATO</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.cepOne}}</td>
+                <td> {{x.contaOne}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <p>DESTINATARIO</p>
+    <table>
+        <thead>
+            <tr>
+                <th>CNPJ</th>
+                <th>NOME DA EMPRESA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.cnpjDest}}</td>
+                <td> {{x.nomeEprTwo}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>TELEFONE</th>
+                <th>RUA</th>
+                <th>BAIRRO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.telTwo}}</td>
+                <td> {{x.logTwo}}</td>
+                <td> {{x.ruaTwo}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>NUMERO</th>
+                <th>CIDADE</th>
+                <th>ESTADO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.numero}}</td>
+                <td> {{x.cityTwo}}</td>
+                <td> {{x.estateTwo}}</td>
+            </tr>
+        </tbody>
+    </table> <table>
+        <thead>
+            <tr>
+                <th>CEP</th>
+                <th>CONTATO</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{x.cepTwo}}</td>
+                <td> {{x.contaTwo}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+        <p>DADOS DA NOTA</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nº DA COTACAO</th>
+                    <th>LARGURA</th>
+                    <th>ALTURA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> {{x.nuCOT}}</td>
+                    <td> {{x.num1}}</td>
+                    <td> {{x.num2}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>PROFUNDIDADE</th>
+                    <th>Quantidade</th>
+                    <th>PESO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> {{x.num3}}</td>
+                    <td> {{x.num4}}</td>
+                    <td> {{x.num5}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>TAXA 1</th>
+                    <th>TAXA 2</th>
+                    <th>VALOR DA NOTA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R$ {{x.num6}}</td>
+                    <td>R$ {{x.num7}}</td>
+                    <td>R$ {{x.num9}}</td>
+                </tr>
+            </tbody>
+        </table> <table>
+            <thead>
+                <tr>
+                    <th>VALOR DO FRETE</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> R$ {{x.num8}}</td>               
+                </tr>
+            </tbody>
+        </table>        
+    {% endfor %}
+    </form>
+    
+    

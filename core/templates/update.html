@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container2">
+        <h1>MUDAR</h1>
+        <form action="{% url 'updcot' dados.id %}" method="post">
+            {% csrf_token %}
+            <div class="parent">
+                <div class="div1">
+                    <label for="" >CNPJ DA EMPRESA:</label></br>
+                    <input  onblur="checkCnpj(this.value)" name='cnpjReme' data-mask="00.000.000/0000-00" type="text" /> 
+                </div>
+                <div class="div2">
+                    <label for="username">NOME DO EMPRESA</label></br>
+                    <input  id="razaoSocial" name="nomeEprOne" type="text" /> 
+                </div>
+                <div class="div3"> 
+                    <label for="username">TELEFONE</label></br>
+                    <input id="telefone" name="telOne" type="text" /> 
+                </div>
+                <div class="div4"> 
+                    <label for="username">LOGRADOURO</label></br>
+                    <input id="logradouro" name="logOne" type="text" /> 
+                </div>
+                <div class="div5"> 
+                    <label for="username">RUA</label></br>
+                    <input id="bairro" name="ruaOne" type="text" /> 
+                </div>
+                <div class="div6"> 
+                    <label for="username">NUMERO</label></br>
+                    <input id="numero" name="username" type="text" /> 
+                </div>
+                <div class="div7"> 
+                    <label for="username">CIDADE</label></br>
+                    <input id="municipio" name="cityOne" type="text" /> 
+                </div>
+                <div class="div8"> 
+                    <label for="username">ESTADO</label></br>
+                    <input id="uf" name="estateOne" type="text" /> 
+                </div>
+                <div class="div9"> 
+                    <label for="username">CEP</label></br>
+                    <input id="cep" name="cepOne" type="text" /> 
+                </div>
+                <div class="div10"> 
+                    <label for="username">CONTATO</label></br>
+                    <input id="username" name="contaOne" type="text" /> 
+                </div>
+            </div>
+            <div class="divrem">
+                <p>DESTINATARIO</p>
+                </div>
+                    <div class="parent">
+                    <div class="div1">
+                        <label for="username">CNPJ DA EMPRESA:</label></br>
+                        <input  onblur="checkCnpjTwo(this.value)" name="cnpjDest" data-mask="00.000.000/0000-00" type="text" /> 
+                    </div>
+                    <div class="div2">
+                        <label for="username">NOME DO CONTATO</label></br>
+                        <input id="razaoSocialTwo" name="nomeEprTwo" type="text" /> 
+                    </div>
+                    <div class="div3"> 
+                        <label for="username">TELEFONE</label></br>
+                        <input id="telefoneTwo" name="telTwo" type="text" /> 
+                    </div>
+                    <div class="div4"> 
+                        <label for="username">LOGRADOURO</label></br>
+                        <input id="logradouroTwo" name="logTwo" type="text" /> 
+                    </div>
+                    <div class="div5"> 
+                        <label for="username">RUA</label></br>
+                        <input id="bairroTwo" name="ruaTwo" type="text" /> 
+                    </div>
+                    <div class="div6"> 
+                        <label for="username">NUMERO</label></br>
+                        <input id="numeroTwo" name="username" type="text" /> 
+                    </div>
+                    <div class="div7"> 
+                        <label for="username">CIDADE</label></br>
+                        <input id="municipioTwo" name="cityTwo" type="text" /> 
+                    </div>
+                    <div class="div8"> 
+                        <label for="username">ESTADO</label></br>
+                        <input id="ufTwo" name="estateTwo" type="text" /> 
+                    </div>
+                    <div class="div9"> 
+                        <label for="username">CEP</label></br>
+                        <input id="cepTwo" name="cepTwo" type="text" /> 
+                    </div>
+                    <div class="div10"> 
+                        <label for="username">CONTATO</label></br>
+                        <input id="username" name="contaTwo" type="text" /> 
+                    </div>
+                 </div>
+                    <div class="divrem">
+                    <p>DADOS DA NOTA</p>        
+                    <div class="parent">
+                    <div class="div1">
+                        <label for="username">Nº DA COTACAO</label></br>
+                        <input  name="nuCOT" type="text"/>  
+                    </div>
+                    <div class="div2">
+                        <label for="username">LARGURA</label></br>
+                        <input  name="num1" id='nim1' type="text" /> 
+                    </div>
+                    <div class="div3"> 
+                        <label for="username">ALTURA</label></br>
+                        <input name="num2" name="username" type="text" /> 
+                    </div>
+                    <div class="div4"> 
+                        <label for="username">PROFUNDIDADE</label></br>
+                        <input name="num3" name="username" type="text" /> 
+                    </div>
+                    <div class="div5"> 
+                        <label for="username">QUANTIDADE</label></br>
+                        <input name="num4" name="username" type="text" /> 
+                    </div>
+                    <div class="div6"> 
+                        <label for="username">PESO</label></br>
+                        <input name="num5" name="username" type="text" /> 
+                    </div>
+                    <div class="div7"> 
+                        <label for="username">TAXA 2:</label></br>
+                        <input name="num6" name="username" type="text" /> 
+                    </div>
+                    <div class="div8"> 
+                        <label for="username">TAXA 1:</label></br>
+                        <input name="num7" name="username" type="text" /> 
+                    </div>
+                    <div class="div9"> 
+                        <label for="username">VALOR DO FRETE</label></br>
+                        <input name="num8" name="username" type="text" {'result': res} /> 
+                    </div>
+                    <div class="div10"> 
+                        <label for="username">VALOR DA NOTA</label></br>
+                        <input name="num9" name="username" type="text" /> 
+                    </div>
+                </div>
+                    <div class= 'botoes'>
+                    <a href="{% url 'home' %}"><button id="button1">VOLTAR</button>
+                    <a href="{% url 'home' %}"><button id="button">COTAR</button>   
+            
+                    </div>
+                </form>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+            
+                <script>
+            
+                    function checkCnpj(cnpj)
+                    {
+                        $.ajax({
+                            'url': 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, ''),
+                            'type': "GET",
+                            'dataType': 'jsonp',
+                            'success': function(data){
+                                if(data.nome == undefined){
+                                    alert(data.status + ' ' + data.message)
+                                } else {
+                                    document.getElementById('razaoSocial').value = data.nome;
+                                    document.getElementById('logradouro').value = data.logradouro;
+                                    document.getElementById('municipio').value = data.municipio;
+                                    document.getElementById('uf').value = data.uf;
+                                    document.getElementById('cep').value = data.cep;
+                                    document.getElementById('telefone').value = data.telefone;
+                                    document.getElementById('bairro').value = data.bairro;
+                                    document.getElementById('numero').value = data.numero;
+                                }
+                            }
+                        })
+                    }
+                </script>
+                <script>
+            
+                    function checkCnpjTwo(cnpj)
+                    {
+                        $.ajax({
+                            'url': 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, ''),
+                            'type': "GET",
+                            'dataType': 'jsonp',
+                            'success': function(data){
+                                if(data.nome == undefined){
+                                    alert(data.status + ' ' + data.message)
+                                } else {
+                                    document.getElementById('razaoSocialTwo').value = data.nome;
+                                    document.getElementById('logradouroTwo').value = data.logradouro;
+                                    document.getElementById('municipioTwo').value = data.municipio;
+                                    document.getElementById('ufTwo').value = data.uf;
+                                    document.getElementById('cepTwo').value = data.cep;
+                                    document.getElementById('telefoneTwo').value = data.telefone;
+                                    document.getElementById('bairroTwo').value = data.bairro;
+                                    document.getElementById('numeroTwo').value = data.numero;
+                                }
+                            }
+                        })
+                    }
+                </script>
+            
+                
+            
+            
+            </body>
+            </html>
+            

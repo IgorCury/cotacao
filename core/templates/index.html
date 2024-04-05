@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{% static 'style/stylle.css' %}">
+<html>
+
+<body>
+    <div class="cont">
+    <h1>COTACAO</h1>
+    </div>
+        <table class="custom-table">
+            <thead>
+                <th>Id</th>
+                <th>NUMERO DA COTACAO</th>
+                <th>NUMERO DA NOTA</th>
+                <th>NOME DA EMPRESA</th>
+                <th colspan="2" id="customers">AÇÃO</th>
+            </thead>
+            {% for x in dados %}      
+            <tr> 
+                <td>{{x.id}}</td>
+                <td>{{x.nuCOT}}</td>
+                <td>{{x.num9}}</td>
+                <td>{{x.nomeEprOne}}</td>
+                    <td>
+                    <a href="delete/{{x.id}}"><button class="button1" id="del">Delete</button></a>                
+               
+                    <a href="update/{{x.id}}"><button class="button2" id='up'>Update</button></a>              
+
+                    <a href="{% url 'generate_pdf' id=x.id%}"><button class="button3"id='up'>PDF</button></a>
+                </td>
+
+
+            </tr>
+        {% endfor %}       
+        </table>
+        <br><br>
+        <a href="{% url 'cotacao'%}"><button class="button4">COTAR</button></a>
+    </div>
+</body>
+
+</body>
+</html>
